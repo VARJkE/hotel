@@ -1,0 +1,44 @@
+<section class="banner_main">
+    <div>
+      <img class="first-slide" src="assets/images/banner1.jpg" alt="Hotel Image">
+    </div>
+    <div class="booking_ocline">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="book_room">
+              <h1>Book a Room Online</h1>
+              <form class="book_now" [formGroup]="datesForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-md-12">
+                    <span>Check In</span>
+                    <mat-form-field appearance="outline">
+                      <mat-label>mm/dd/yyyy</mat-label>
+                      <input formControlName="checkInDate" matInput [matDatepicker]="checkinPicker" placeholder="mm/dd/yyyy">
+                      <mat-datepicker-toggle matSuffix [for]="checkinPicker"></mat-datepicker-toggle>
+                      <mat-datepicker #checkinPicker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-12">
+                    <!-- <span>Departure</span>
+                    <img class="date_cua" src="assets/images/date.png">
+                    <input class="online_book" placeholder="dd/mm/yyyy" type="date" name="dd/mm/yyyy"> -->
+                    <span>Check Out</span>
+                    <mat-form-field appearance="outline">
+                      <mat-label>mm/dd/yyyy</mat-label>
+                      <input formControlName="checkOutDate" matInput [matDatepicker]="checkoutPicker" placeholder="mm/dd/yyyy">
+                      <mat-datepicker-toggle matSuffix [for]="checkoutPicker"></mat-datepicker-toggle>
+                      <mat-datepicker #checkoutPicker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-12">
+                    <button class="check_dates_btn" type="submit">Book Now</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

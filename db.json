@@ -1,0 +1,93 @@
+{
+  "availableRooms": [
+    {
+      "id": 1,
+      "roomNumber": 101,
+      "roomType": "Standart",
+      "price": 50,
+      "services": ["breakfast", "wi-fi"],
+      "isAvaiable": true
+    },
+    {
+      "id": 2,
+      "roomNumber": 102,
+      "roomType": "Standart",
+      "price": 50,
+      "services": ["breakfast", "wi-fi"],
+      "isAvaiable": true
+    },
+    {
+      "id": 3,
+      "roomNumber": 103,
+      "roomType": "Lux",
+      "price": 100,
+      "services": ["breakfast", "wi-fi"],
+      "isAvaiable": true
+    },
+    {
+      "id": 4,
+      "roomNumber": 104,
+      "roomType": "Standart Double",
+      "price": 70,
+      "services": ["breakfast", "wi-fi"],
+      "isAvaiable": true
+    },
+    {
+      "id": 5,
+      "roomNumber": 105,
+      "roomType": "Apartment Studio",
+      "price": 150,
+      "services": ["breakfast", "wi-fi"],
+      "isAvaiable": true
+    },
+    {
+      "id": 6,
+      "roomNumber": 106,
+      "roomType": "Standart Double",
+      "price": 70,
+      "services": ["breakfast", "wi-fi"],
+      "isAvaiable": true
+    }
+
+  ],
+
+  "roomTypes": [
+    {
+      "id": 1,
+      "title": "Standart Room",
+      "price": 50,
+      "services": ["breakfast", "wi-fi"]
+    },
+    {
+      "id": 2,
+      "title": "Standart Double Room",
+      "price": 70,
+      "services": ["breakfast", "wi-fi"]
+    },
+    {
+      "id": 3,
+      "title": "Lux Room",
+      "price": 100,
+      "services": ["breakfast", "wi-fi"]
+    },
+    {
+      "id": 4,
+      "title": "Apartment Studio",
+      "price": 150,
+      "services": ["breakfast", "wi-fi"]
+    },
+    {
+      "id": 5,
+      "title": "Double Room With Sofa",
+      "price": 80,
+      "services": ["breakfast", "wi-fi"]
+    },
+    {
+      "id": 6,
+      "title": "Big Family Room",
+      "price": 200,
+      "services": ["breakfast", "wi-fi"]
+    }
+
+  ]
+}

@@ -1,0 +1,49 @@
+<div class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="titlepage">
+          <h2>Contact Us</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="main_form">
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="contactus" placeholder="Name, Surname *" formControlName="fullName">
+              <span *ngIf="contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched"
+                class="invalid">Name is required</span>
+            </div>
+            <div class="col-md-12">
+              <input type="email" placeholder="email@example.com *" formControlName="email" class="contactus">
+              <span *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="invalid">Email
+                address is not valid</span>
+            </div>
+            <div class="col-md-12">
+              <input type="tel" class="contactus" placeholder="Phone Number" formControlName="phoneNumber">
+            </div>
+            <div class="col-md-12">
+              <textarea class="textarea" placeholder="Message" formControlName="messageArea"></textarea>
+            </div>
+            <div class="col-md-12">
+              <button class="send_btn" type="submit" [disabled]="contactForm.invalid">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="map_main">
+          <div class="map-responsive">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190570.63418894136!2d44.80676375!3d41.72772215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7e64f626b%3A0x61d084ede2576ea3!2z0KLQsdC40LvQuNGB0Lg!5e0!3m2!1sru!2sge!4v1698323302376!5m2!1sru!2sge"
+              width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
