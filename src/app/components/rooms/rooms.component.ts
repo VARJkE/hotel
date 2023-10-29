@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Room } from 'src/app/models/Room';
 import { RoomType } from 'src/app/models/RoomType';
 import { DataService } from 'src/app/service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rooms',
@@ -11,7 +10,9 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class RoomsComponent {
 
-  constructor(private httpClient: HttpClient, private dataService: DataService) {
+  constructor(
+    private dataService: DataService, 
+    private router: Router) {
   }
 
  rooms: RoomType[] = []; 
@@ -25,4 +26,7 @@ export class RoomsComponent {
     this.dataService.getRoomTypes().subscribe((res: RoomType[]) => this.rooms = res)
   }
 
+  viewRoomDetails(roomId: string) {
+    this.router.navigate(['/room/details'], { queryParams: {id: roomId}});
+  }
 }

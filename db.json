@@ -6,7 +6,7 @@
       "roomType": "Standart",
       "price": 50,
       "services": ["breakfast", "wi-fi"],
-      "isAvaiable": true
+      "isAvailable": true
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "roomType": "Standart",
       "price": 50,
       "services": ["breakfast", "wi-fi"],
-      "isAvaiable": true
+      "isAvailable": true
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "roomType": "Lux",
       "price": 100,
       "services": ["breakfast", "wi-fi"],
-      "isAvaiable": true
+      "isAvailable": true
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "roomType": "Standart Double",
       "price": 70,
       "services": ["breakfast", "wi-fi"],
-      "isAvaiable": true
+      "isAvailable": true
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "roomType": "Apartment Studio",
       "price": 150,
       "services": ["breakfast", "wi-fi"],
-      "isAvaiable": true
+      "isAvailable": true
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "roomType": "Standart Double",
       "price": 70,
       "services": ["breakfast", "wi-fi"],
-      "isAvaiable": true
+      "isAvailable": true
     }
 
   ],
@@ -56,38 +56,57 @@
       "id": 1,
       "title": "Standart Room",
       "price": 50,
+      "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": ["breakfast", "wi-fi"]
     },
     {
       "id": 2,
       "title": "Standart Double Room",
       "price": 70,
+      "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": ["breakfast", "wi-fi"]
     },
     {
       "id": 3,
       "title": "Lux Room",
       "price": 100,
+      "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": ["breakfast", "wi-fi"]
     },
     {
       "id": 4,
       "title": "Apartment Studio",
       "price": 150,
+      "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": ["breakfast", "wi-fi"]
     },
     {
       "id": 5,
       "title": "Double Room With Sofa",
       "price": 80,
+      "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": ["breakfast", "wi-fi"]
     },
     {
       "id": 6,
       "title": "Big Family Room",
       "price": 200,
+      "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": ["breakfast", "wi-fi"]
     }
 
+  ],
+
+  "bookingData": [
+    {
+      "id": 1,
+      "roomId": 1,
+      "checkInDate": "2023-10-29",
+      "checkOutDate": "2023-11-05",
+      "guestFullName": "Lado Chopinovi",
+      "guestEmail": "lado.chopinovi@gmail.com",
+      "guestPhone": "595002979"
+    }
+    
   ]
 }

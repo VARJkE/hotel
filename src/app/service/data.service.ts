@@ -21,5 +21,14 @@ export class DataService {
     return this.httpClient.request<Array<RoomType>>('GET', this.API_URL + '/roomTypes')
   }
 
+  getRoomDetails(roomId: number): Observable<RoomType> {
+    // Implement the logic to fetch room details by ID here
+    return this.httpClient.request<RoomType>('GET', this.API_URL + `/roomTypes/${roomId}`)
+    
+  }
+
+  getBookingDetails(): Observable<Array<any>>{
+    return this.httpClient.request<Array<any>>('GET',  this.API_URL + '/bookingData')
+  }
 
 }

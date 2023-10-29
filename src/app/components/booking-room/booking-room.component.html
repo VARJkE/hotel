@@ -1,0 +1,89 @@
+<div class="booking">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>Book room</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="map_main">
+                    <div class="map-responsive">
+                        <img src="assets/images/room1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking_form">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" class="booking_form_input" placeholder="Name, Surname *"
+                                formControlName="fullName">
+                            <span *ngIf="bookingForm.get('fullName')?.invalid && bookingForm.get('fullName')?.touched"
+                                class="invalid">Name is required</span>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="email" placeholder="email@example.com *" formControlName="email"
+                                class="booking_form_input">
+                            <span *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched"
+                                class="invalid">Email
+                                address is not valid</span>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="tel" class="booking_form_input" placeholder="Phone Number"
+                                formControlName="phoneNumber">
+                        </div>
+                        <!-- <div class="col-md-12">
+                            <span>Check In</span>
+                            <mat-form-field appearance="outline">
+                                <mat-label>mm/dd/yyyy</mat-label>
+                                <input formControlName="checkInDate" matInput [matDatepicker]="checkinPicker"
+                                    placeholder="mm/dd/yyyy">
+                                <mat-datepicker-toggle matSuffix [for]="checkinPicker"></mat-datepicker-toggle>
+                                <mat-datepicker #checkinPicker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-12">
+                            <span>Check Out</span>
+                            <mat-form-field appearance="outline" color="accent">
+                                <mat-label>mm/dd/yyyy</mat-label>
+                                <input formControlName="checkOutDate" matInput [matDatepicker]="checkoutPicker"
+                                    placeholder="mm/dd/yyyy">
+                                <mat-datepicker-toggle matSuffix [for]="checkoutPicker"></mat-datepicker-toggle>
+                                <mat-datepicker #checkoutPicker></mat-datepicker>
+                            </mat-form-field>
+                        </div> -->
+                        
+                        <div class="col-md-6" class="date_picker">
+                            <label class="date_text">CheckIn:</label>
+                            <input type="date" placeholder="Checkin" formControlName="checkInDate" [min]="minDate">
+                            <label class="date_text">CheckOut:</label>
+                            <input type="date" class=".date_text" placeholder="Checkout"
+                                formControlName="checkOutDate">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="persons"><span>Persons:</span>
+                                <select formControlName="guestsNumber" id="persons">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </label>
+
+                        </div>
+
+                        
+                        <div class="col-md-12">
+                            <button class="send_btn" type="submit" [disabled]="bookingForm.invalid">Book Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>

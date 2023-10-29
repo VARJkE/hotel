@@ -12,11 +12,11 @@
         <div class="col-md-4 col-sm-6" *ngFor="let room of rooms">
           <div id="serv_hover" class="room">
             <div class="room_img">
-              <figure><img src= "assets/images/room{{room.id}}.jpg" alt="#" /></figure>
+              <figure><a (click)="viewRoomDetails(room.id.toString())"><img src= "assets/images/room{{room.id}}.jpg" alt="#" /></a> </figure>
             </div>
             <div class="bed_room">
               <h3>{{room.title}}</h3>
-              <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+              <p>{{room.desc}}</p>
               <p class="price">{{room.price}} &#8382;</p>
               <p>{{room.services}}</p>
             </div>
@@ -25,3 +25,4 @@
       </div>
     </div>
   </div>
+  <router-outlet></router-outlet>

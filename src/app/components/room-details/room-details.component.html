@@ -1,0 +1,36 @@
+<div class="room-details" *ngIf="room">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="titlepage">
+              <h2>{{room.title}}</h2> 
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div id="serv_hover" class="room">
+              <div class="room_img">
+                <figure><img src= "assets/images/room1.jpg" alt="Room" /></figure>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bed_room">
+                <div>
+                    <p class="room-desc">{{room.desc}}</p>
+                    <p>Price per night: <span class="price">{{room.price}} &#8382;</span></p>
+                </div>
+                
+                <button type="submit" class="book_btn">Book Now</button>
+            </div>
+
+
+                    
+                
+
+          </div>
+        </div>
+      </div>
+</div>

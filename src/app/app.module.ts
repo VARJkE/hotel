@@ -16,6 +16,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AvailableRoomsComponent } from './components/available-rooms/available-rooms.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { BookingRoomComponent } from './components/booking-room/booking-room.component';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import { AvailableRoomsComponent } from './components/available-rooms/available-
     ContactComponent,
     MainComponent,
     AvailableRoomsComponent,
+    RoomDetailsComponent,
+    BookingRoomComponent,
     
   ],
   imports: [
@@ -39,9 +45,10 @@ import { AvailableRoomsComponent } from './components/available-rooms/available-
     MatNativeDateModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
