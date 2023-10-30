@@ -13,6 +13,7 @@ import { DatePipe } from '@angular/common';
 
 export class MainComponent {
   datesForm!: FormGroup;
+  minDate: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,6 +25,8 @@ export class MainComponent {
 
  ngOnInit() {
   this.buildDatesForm();
+  const today = new Date();
+  this.minDate = today.toISOString().split('T')[0];
 
  }
 
@@ -42,7 +45,9 @@ export class MainComponent {
       checkin: this.datePipe.transform(this.datesForm.value.checkInDate, 'yyyy-MM-dd'), 
       checkout: this.datePipe.transform(this.datesForm.value.checkOutDate, 'yyyy-MM-dd')
     }
-    })
+    }
+    
+    )
  }
 
 }

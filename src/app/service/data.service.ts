@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Room } from '../models/Room';
@@ -30,5 +30,15 @@ export class DataService {
   getBookingDetails(): Observable<Array<any>>{
     return this.httpClient.request<Array<any>>('GET',  this.API_URL + '/bookingData')
   }
+
+  postBookingData(data: any): Observable<any>{
+    let httpHeader = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.httpClient.post(this.API_URL + '/bookingData', data, httpHeader)
+  };
 
 }

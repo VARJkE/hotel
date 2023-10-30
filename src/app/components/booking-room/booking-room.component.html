@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking_form">
+                <form [formGroup]="bookingForm" (ngSubmit)="addBookingData()" class="booking_form">
                     <div class="row">
                         <div class="col-md-12">
                             <input type="text" class="booking_form_input" placeholder="Name, Surname *"
@@ -58,10 +58,9 @@
                         
                         <div class="col-md-6" class="date_picker">
                             <label class="date_text">CheckIn:</label>
-                            <input type="date" placeholder="Checkin" formControlName="checkInDate" [min]="minDate">
+                            <input type="date" placeholder="Checkin"  formControlName="checkInDate" [min]="minDate">
                             <label class="date_text">CheckOut:</label>
-                            <input type="date" class=".date_text" placeholder="Checkout"
-                                formControlName="checkOutDate">
+                            <input type="date" placeholder="Checkout" formControlName="checkOutDate" [min]="checkIn">
                         </div>
                         <div class="col-md-12">
                             <label for="persons"><span>Persons:</span>

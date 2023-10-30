@@ -3,100 +3,132 @@
     {
       "id": 1,
       "roomNumber": 101,
-      "roomType": "Standart",
+      "roomType": 1,
       "price": 50,
-      "services": ["breakfast", "wi-fi"],
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ],
       "isAvailable": true
     },
     {
       "id": 2,
       "roomNumber": 102,
-      "roomType": "Standart",
+      "roomType": 1,
       "price": 50,
-      "services": ["breakfast", "wi-fi"],
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ],
       "isAvailable": true
     },
     {
       "id": 3,
       "roomNumber": 103,
-      "roomType": "Lux",
+      "roomType": 3,
       "price": 100,
-      "services": ["breakfast", "wi-fi"],
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ],
       "isAvailable": true
     },
     {
       "id": 4,
       "roomNumber": 104,
-      "roomType": "Standart Double",
+      "roomType": 2,
       "price": 70,
-      "services": ["breakfast", "wi-fi"],
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ],
       "isAvailable": true
     },
     {
       "id": 5,
       "roomNumber": 105,
-      "roomType": "Apartment Studio",
+      "roomType": 4,
       "price": 150,
-      "services": ["breakfast", "wi-fi"],
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ],
       "isAvailable": true
     },
     {
       "id": 6,
       "roomNumber": 106,
-      "roomType": "Standart Double",
+      "roomType": 2,
       "price": 70,
-      "services": ["breakfast", "wi-fi"],
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ],
       "isAvailable": true
     }
-
   ],
-
   "roomTypes": [
     {
       "id": 1,
       "title": "Standart Room",
       "price": 50,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
-      "services": ["breakfast", "wi-fi"]
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ]
     },
     {
       "id": 2,
       "title": "Standart Double Room",
       "price": 70,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
-      "services": ["breakfast", "wi-fi"]
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ]
     },
     {
       "id": 3,
       "title": "Lux Room",
       "price": 100,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
-      "services": ["breakfast", "wi-fi"]
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ]
     },
     {
       "id": 4,
       "title": "Apartment Studio",
       "price": 150,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
-      "services": ["breakfast", "wi-fi"]
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ]
     },
     {
       "id": 5,
       "title": "Double Room With Sofa",
       "price": 80,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
-      "services": ["breakfast", "wi-fi"]
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ]
     },
     {
       "id": 6,
       "title": "Big Family Room",
       "price": 200,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
-      "services": ["breakfast", "wi-fi"]
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ]
     }
-
   ],
-
   "bookingData": [
     {
       "id": 1,
@@ -106,7 +138,25 @@
       "guestFullName": "Lado Chopinovi",
       "guestEmail": "lado.chopinovi@gmail.com",
       "guestPhone": "595002979"
+    },
+    {
+      "id": 2,
+      "roomId": 4,
+      "checkInDate": "2023-11-07",
+      "checkOutDate": "2023-11-10",
+      "guestFullName": "Lado Chopinovi",
+      "guestEmail": "lado.chopinovi@gmail.com",
+      "guestPhone": "595002979"
+    },
+    {
+      "id": 4,
+      "fullName": "dsaf",
+      "email": "fsafsd@dsaf",
+      "phoneNumber": "dsfdsf",
+      "roomType": "3",
+      "checkInDate": "2023-10-31",
+      "checkOutDate": "2023-11-30",
+      "guestsNumber": "1"
     }
-    
   ]
 }

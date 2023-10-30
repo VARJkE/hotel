@@ -16,7 +16,7 @@ const routes: Routes = [
     { path: 'gallery', title: 'Rooms Gallery', component: GalleryComponent},
     { path: 'contact', title: 'Contact Us', component: ContactComponent},
     { path: 'room/details', title: 'Room Details', component: RoomDetailsComponent},
-    { path: 'booking', title: 'Booking', component: BookingRoomComponent},
+    { path: 'rooms/booking', title: 'Booking', component: BookingRoomComponent},
     { path: 'rooms/available', title: 'Available Rooms', component: AvailableRoomsComponent},
     
 

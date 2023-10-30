@@ -14,7 +14,7 @@
                     <span>Check In</span>
                     <mat-form-field appearance="outline" color="accent">
                       <mat-label>mm/dd/yyyy</mat-label>
-                      <input formControlName="checkInDate" matInput [matDatepicker]="checkinPicker" placeholder="mm/dd/yyyy" >
+                      <input formControlName="checkInDate" matInput [matDatepicker]="checkinPicker" placeholder="mm/dd/yyyy" [min]="minDate">
                       <mat-datepicker-toggle matSuffix [for]="checkinPicker" ></mat-datepicker-toggle>
                       <mat-datepicker #checkinPicker ></mat-datepicker>
                     </mat-form-field>
