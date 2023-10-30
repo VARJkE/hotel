@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Room } from 'src/app/models/Room';
 import { RoomType } from 'src/app/models/RoomType';
 import { DataService } from 'src/app/service/data.service';
@@ -22,37 +22,36 @@ export class AvailableRoomsComponent {
     private dataService: DataService,
     private router: Router,
   ) {
-    
-  this.getRoomTypes()
-  this.getRooms()
-  this.getBookings()
+
+    this.getRoomTypes()
+    this.getRooms()
+    this.getBookings()
   }
 
 
- ngOnInit() {
-  
-  
-  this.route.queryParams.subscribe(params => {
-    this.checkIn = params['checkin'];
-    this.checkOut = params['checkout'];
-  
-  })
+  ngOnInit() {
+
+    this.route.queryParams.subscribe(params => {
+      this.checkIn = params['checkin'];
+      this.checkOut = params['checkout'];
+
+    })
 
 
- } 
+  }
 
-getRooms() {
-  return this.dataService.getAvailableRooms().subscribe((res) => this.availableRooms = res)
-}
+  getRooms() {
+    return this.dataService.getAvailableRooms().subscribe((res) => this.availableRooms = res)
+  }
 
-getBookings() {
-  return this.dataService.getBookingDetails().subscribe((res) => this.bookingData = res)
-}
+  getBookings() {
+    return this.dataService.getBookingDetails().subscribe((res) => this.bookingData = res)
+  }
 
-getRoomTypes() {
-  this.dataService.getRoomTypes().subscribe((res: RoomType[]) => this.roomTypes = res)
-}
-  
+  getRoomTypes() {
+    this.dataService.getRoomTypes().subscribe((res: RoomType[]) => this.roomTypes = res)
+  }
+
 
   checkRoomAvailability(checkin: Date, checkout: Date): any {
     for (let room of this.availableRooms) {
@@ -60,7 +59,7 @@ getRoomTypes() {
     }
     for (let booking of this.bookingData) {
 
-       if (booking.checkInDate <= checkout && booking.checkOutDate >= checkin) {
+      if (booking.checkInDate <= checkout && booking.checkOutDate >= checkin) {
         const bookedRoom = this.availableRooms.find((room) => room.id === booking.roomId);
         if (bookedRoom) {
           bookedRoom.isAvailable = false;
@@ -75,10 +74,12 @@ getRoomTypes() {
       queryParams: {
         roomid: roomId,
         roomtypeid: roomTypeId,
+        bookingid: this.bookingData.length + 1,
         checkin: this.checkIn,
         checkout: this.checkOut
       }
     })
+
   }
 
 }

@@ -147,16 +147,6 @@
       "guestFullName": "Lado Chopinovi",
       "guestEmail": "lado.chopinovi@gmail.com",
       "guestPhone": "595002979"
-    },
-    {
-      "id": 4,
-      "fullName": "dsaf",
-      "email": "fsafsd@dsaf",
-      "phoneNumber": "dsfdsf",
-      "roomType": "3",
-      "checkInDate": "2023-10-31",
-      "checkOutDate": "2023-11-30",
-      "guestsNumber": "1"
     }
   ]
 }

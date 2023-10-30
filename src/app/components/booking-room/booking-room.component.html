@@ -20,20 +20,20 @@
                     <div class="row">
                         <div class="col-md-12">
                             <input type="text" class="booking_form_input" placeholder="Name, Surname *"
-                                formControlName="fullName">
-                            <span *ngIf="bookingForm.get('fullName')?.invalid && bookingForm.get('fullName')?.touched"
+                                formControlName="guestFullName">
+                            <span *ngIf="bookingForm.get('guestFullName')?.invalid && bookingForm.get('guestFullName')?.touched"
                                 class="invalid">Name is required</span>
                         </div>
                         <div class="col-md-12">
-                            <input type="email" placeholder="email@example.com *" formControlName="email"
+                            <input type="email" placeholder="email@example.com *" formControlName="guestEmail"
                                 class="booking_form_input">
-                            <span *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched"
+                            <span *ngIf="bookingForm.get('guestEmail')?.invalid && bookingForm.get('guestEmail')?.touched"
                                 class="invalid">Email
                                 address is not valid</span>
                         </div>
                         <div class="col-md-12">
                             <input type="tel" class="booking_form_input" placeholder="Phone Number"
-                                formControlName="phoneNumber">
+                                formControlName="guestPhoneNumber">
                         </div>
                         <!-- <div class="col-md-12">
                             <span>Check In</span>
@@ -58,9 +58,9 @@
                         
                         <div class="col-md-6" class="date_picker">
                             <label class="date_text">CheckIn:</label>
-                            <input type="date" placeholder="Checkin"  formControlName="checkInDate" [min]="minDate">
+                            <input type="date" placeholder="Checkin"  formControlName="checkInDate" [min]="checkIn" readonly>
                             <label class="date_text">CheckOut:</label>
-                            <input type="date" placeholder="Checkout" formControlName="checkOutDate" [min]="checkIn">
+                            <input type="date" placeholder="Checkout" formControlName="checkOutDate" [min]="checkIn" readonly>
                         </div>
                         <div class="col-md-12">
                             <label for="persons"><span>Persons:</span>

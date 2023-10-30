@@ -14,7 +14,8 @@ export class BookingRoomComponent {
   minDate: string = '';
   roomId: number = 0;
   roomTypeId: number = 0;
-  today = new Date();
+  bookingId: number = 0;
+
   checkIn: Date = new Date;
   checkOut: Date = new Date;
 
@@ -29,38 +30,35 @@ export class BookingRoomComponent {
 
   ngOnInit() {
 
-    this.minDate = this.today.toISOString().split('T')[0];
     this.route.queryParams.subscribe((params) => {
       this.roomId = params['roomid'];
-      this.roomTypeId = params['roomtypeid']
+      this.roomTypeId = params['roomtypeid'];
+      this.bookingId = params['bookingid'];
       this.checkIn = params['checkin'];
-      this.checkOut = params['checkout']
-      
+      this.checkOut = params['checkout'];
     }
       )
 
       this.buildBookingForm();
-      console.log(this.roomId, this.checkIn, this.checkOut, this.roomTypeId)
   }
 
   buildBookingForm() {
     this.bookingForm = this.formBuilder.group(
       {
-        id: [4],
-        fullName: ['', [Validators.required]],
-        email: ['', [Validators.required, Validators.email]],
-        phoneNumber: [''],
-        roomType: [this.roomTypeId],
-        checkInDate: [ {value: this.checkIn} ],
-        checkOutDate: [ {value: this.checkOut} ],
+        id: [this.bookingId],
+        guestFullName: ['', [Validators.required]],
+        guestEmail: ['', [Validators.required, Validators.email]],
+        guestPhoneNumber: [''],
+        roomId: [this.roomId],
+        checkInDate: [this.checkIn],
+        checkOutDate: [this.checkOut],
         guestsNumber: ['1']
-
       }) 
   }
 
   addBookingData() {
     this.dataService.postBookingData(this.bookingForm.value).subscribe(res => console.log(res))
-    console.log(this.bookingForm.value)
+    this.bookingForm.reset()
   }
 
 
