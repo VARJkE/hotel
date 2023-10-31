@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Booking } from 'src/app/models/Booking';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class BookingRoomComponent {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private dataService: DataService
+    private dataService: DataService,
+    private router: Router,
   ) {
 
   }
@@ -30,15 +32,19 @@ export class BookingRoomComponent {
 
   ngOnInit() {
 
-    this.route.queryParams.subscribe((params) => {
-      this.roomId = params['roomid'];
-      this.roomTypeId = params['roomtypeid'];
-      this.bookingId = params['bookingid'];
-      this.checkIn = params['checkin'];
-      this.checkOut = params['checkout'];
-    }
-      )
-
+    // this.route.queryParams.subscribe((params) => {
+    //   this.roomId = params['roomid'];
+    //   this.roomTypeId = params['roomtypeid'];
+    //   this.bookingId = params['bookingid'];
+    //   this.checkIn = params['checkin'];
+    //   this.checkOut = params['checkout'];
+    // }
+    //   )  
+      this.bookingId = this.dataService.bookingDetails.id;
+      this.roomId = this.dataService.bookingDetails.roomId;
+      this.roomTypeId = this.dataService.bookingDetails.roomTypeId;
+      this.checkIn = this.dataService.bookingDetails.checkInDate;
+      this.checkOut = this.dataService.bookingDetails.checkOutDate;
       this.buildBookingForm();
   }
 
@@ -50,6 +56,7 @@ export class BookingRoomComponent {
         guestEmail: ['', [Validators.required, Validators.email]],
         guestPhoneNumber: [''],
         roomId: [this.roomId],
+        roomTypeId: [this.roomTypeId],
         checkInDate: [this.checkIn],
         checkOutDate: [this.checkOut],
         guestsNumber: ['1']
@@ -57,8 +64,14 @@ export class BookingRoomComponent {
   }
 
   addBookingData() {
-    this.dataService.postBookingData(this.bookingForm.value).subscribe(res => console.log(res))
-    this.bookingForm.reset()
+    let bookingData: Booking;
+    bookingData = this.bookingForm.value;
+    this.dataService.postBookingData(bookingData).subscribe();
+    console.log(bookingData)
+    this.bookingForm.reset();
+    alert("Successfully!");
+    this.router.navigate(['/main']);
+
   }
 
 

@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Room } from '../models/Room';
 import { RoomType } from '../models/RoomType';
+import { Booking } from '../models/Booking';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+
+  bookingDetails!: Booking;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -31,14 +34,15 @@ export class DataService {
     return this.httpClient.request<Array<any>>('GET',  this.API_URL + '/bookingData')
   }
 
-  postBookingData(data: any): Observable<any>{
+  postBookingData(data: any): Observable<Booking>{
     let httpHeader = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-
-    return this.httpClient.post(this.API_URL + '/bookingData', data, httpHeader)
+    return this.httpClient.post<Booking>(this.API_URL + '/bookingData', data, httpHeader)
   };
+
+
 
 }

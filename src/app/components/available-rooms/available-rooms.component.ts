@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Booking } from 'src/app/models/Booking';
 import { Room } from 'src/app/models/Room';
 import { RoomType } from 'src/app/models/RoomType';
 import { DataService } from 'src/app/service/data.service';
@@ -24,8 +25,9 @@ export class AvailableRoomsComponent {
   ) {
 
     this.getRoomTypes()
-    this.getRooms()
     this.getBookings()
+    this.getRooms()
+
   }
 
 
@@ -36,8 +38,7 @@ export class AvailableRoomsComponent {
       this.checkOut = params['checkout'];
 
     })
-
-
+ 
   }
 
   getRooms() {
@@ -53,34 +54,35 @@ export class AvailableRoomsComponent {
   }
 
 
-  checkRoomAvailability(checkin: Date, checkout: Date): any {
+  checkRoomAvailability(checkin: Date, checkout: Date) {
     for (let room of this.availableRooms) {
       room.isAvailable = true;
     }
     for (let booking of this.bookingData) {
-
+      
       if (booking.checkInDate <= checkout && booking.checkOutDate >= checkin) {
         const bookedRoom = this.availableRooms.find((room) => room.id === booking.roomId);
         if (bookedRoom) {
           bookedRoom.isAvailable = false;
         }
-
+        
       }
     }
   }
 
   addBooking(roomId: any, roomTypeId: any) {
-    this.router.navigate(['rooms/booking'], {
-      queryParams: {
-        roomid: roomId,
-        roomtypeid: roomTypeId,
-        bookingid: this.bookingData.length + 1,
-        checkin: this.checkIn,
-        checkout: this.checkOut
-      }
-    })
-
+    // this.router.navigate(['rooms/booking'], {
+    //   queryParams: {
+    //     roomid: roomId,
+    //     roomtypeid: roomTypeId,
+    //     bookingid: this.bookingData.length + 1,
+    //     checkin: this.checkIn,
+    //     checkout: this.checkOut
+    //   }
+    // })
+    this.dataService.bookingDetails = new Booking(this.bookingData.length + 1, roomId, roomTypeId, this.checkIn, this.checkOut, '', '', 0, 0)
+    this.router.navigate(['rooms/booking']);
+    console.log(this.dataService.bookingDetails)
   }
 
 }
-

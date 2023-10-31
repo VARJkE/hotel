@@ -137,7 +137,8 @@
       "checkOutDate": "2023-11-05",
       "guestFullName": "Lado Chopinovi",
       "guestEmail": "lado.chopinovi@gmail.com",
-      "guestPhone": "595002979"
+      "guestPhone": "595002979",
+      "guestsNumber": "4"
     },
     {
       "id": 2,
@@ -146,7 +147,8 @@
       "checkOutDate": "2023-11-10",
       "guestFullName": "Lado Chopinovi",
       "guestEmail": "lado.chopinovi@gmail.com",
-      "guestPhone": "595002979"
+      "guestPhone": "595002979",
+      "guestsNumber": "2"
     }
   ]
 }
