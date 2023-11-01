@@ -27,6 +27,7 @@ export class AvailableRoomsComponent {
     this.getRoomTypes()
     this.getBookings()
     this.getRooms()
+    
 
   }
 
@@ -38,7 +39,8 @@ export class AvailableRoomsComponent {
       this.checkOut = params['checkout'];
 
     })
- 
+
+
   }
 
   getRooms() {

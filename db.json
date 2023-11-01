@@ -80,7 +80,7 @@
     },
     {
       "id": 2,
-      "title": "Standart Double Room",
+      "title": "Superior Beach Front Room",
       "price": 70,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": [
@@ -90,7 +90,7 @@
     },
     {
       "id": 3,
-      "title": "Lux Room",
+      "title": "Sea View Room",
       "price": 100,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": [
@@ -100,7 +100,7 @@
     },
     {
       "id": 4,
-      "title": "Apartment Studio",
+      "title": "Corner Suite",
       "price": 150,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": [
@@ -110,7 +110,7 @@
     },
     {
       "id": 5,
-      "title": "Double Room With Sofa",
+      "title": "Royal Suite",
       "price": 80,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": [
@@ -120,7 +120,7 @@
     },
     {
       "id": 6,
-      "title": "Big Family Room",
+      "title": "Presidential Suite",
       "price": 200,
       "desc": "If you are going to use a passage of Lorem Ipsum, you need to be sure there",
       "services": [

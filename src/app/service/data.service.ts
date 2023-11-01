@@ -25,7 +25,6 @@ export class DataService {
   }
 
   getRoomDetails(roomId: number): Observable<RoomType> {
-    // Implement the logic to fetch room details by ID here
     return this.httpClient.request<RoomType>('GET', this.API_URL + `/roomTypes/${roomId}`)
     
   }
@@ -34,7 +33,7 @@ export class DataService {
     return this.httpClient.request<Array<any>>('GET',  this.API_URL + '/bookingData')
   }
 
-  postBookingData(data: any): Observable<Booking>{
+  postBookingData(data: Booking): Observable<Booking>{
     let httpHeader = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -42,7 +41,6 @@ export class DataService {
     };
     return this.httpClient.post<Booking>(this.API_URL + '/bookingData', data, httpHeader)
   };
-
 
 
 }

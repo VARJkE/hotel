@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { BookingRoomComponent } from './components/booking-room/booking-room.component';
 import {DatePipe} from '@angular/common';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {DatePipe} from '@angular/common';
     MatFormFieldModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxGalleryModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
