@@ -4,7 +4,6 @@
       "id": 1,
       "roomNumber": 101,
       "roomType": 1,
-      "price": 50,
       "services": [
         "breakfast",
         "wi-fi"
@@ -15,7 +14,6 @@
       "id": 2,
       "roomNumber": 102,
       "roomType": 1,
-      "price": 50,
       "services": [
         "breakfast",
         "wi-fi"
@@ -26,7 +24,6 @@
       "id": 3,
       "roomNumber": 103,
       "roomType": 3,
-      "price": 100,
       "services": [
         "breakfast",
         "wi-fi"
@@ -37,7 +34,6 @@
       "id": 4,
       "roomNumber": 104,
       "roomType": 2,
-      "price": 70,
       "services": [
         "breakfast",
         "wi-fi"
@@ -48,7 +44,6 @@
       "id": 5,
       "roomNumber": 105,
       "roomType": 4,
-      "price": 150,
       "services": [
         "breakfast",
         "wi-fi"
@@ -59,13 +54,33 @@
       "id": 6,
       "roomNumber": 106,
       "roomType": 2,
-      "price": 70,
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": 7,
+      "roomNumber": 106,
+      "roomType": 5,
+      "services": [
+        "breakfast",
+        "wi-fi"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": 8,
+      "roomNumber": 106,
+      "roomType": 6,
       "services": [
         "breakfast",
         "wi-fi"
       ],
       "isAvailable": true
     }
+
   ],
   "roomTypes": [
     {

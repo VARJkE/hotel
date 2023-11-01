@@ -13,7 +13,7 @@
                     <div class="col-md-3">
                         <div id="serv_hover" class="room">
                             <div class="room_img">
-                                <figure><img src="assets/images/room{{room.id}}.jpg" alt="#" /></figure>
+                                <figure><img src= "assets/img/{{room.roomType}}/4.jpg" alt="#" /></figure>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="available-room_price">
-                            <p class="price">Price: {{room.price}} &#8382;</p>
+                            <p class="price">Price: {{roomTypes[room.roomType-1].price}} &#8382;</p>
                             <button type="submit" class="book_btn" (click)="addBooking(room.id, room.roomType)">Book Now</button>
                         </div>
                     </div>
