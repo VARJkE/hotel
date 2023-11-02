@@ -257,6 +257,7 @@ button {
     line-height: 20px;
     font-weight: 500;
     text-transform: uppercase;
+    transition: 0.1s ease-out;
 
 }
 
@@ -264,6 +265,7 @@ button {
 .navigation.navbar-dark .navbar-nav .nav-link:hover {
     color: #00abf0;
     border-bottom: #00abf0 solid 3px;
+    transition: 0.1s ease-out;
 }
 
 .navigation.navbar-dark .navbar-nav .active>.nav-link,
