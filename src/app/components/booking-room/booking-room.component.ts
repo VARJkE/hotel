@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Booking } from 'src/app/models/Booking';
 import { DataService } from 'src/app/service/data.service';
+import {NgxGalleryImage} from '@kolkov/ngx-gallery';
+import {NgxGalleryOptions} from '@kolkov/ngx-gallery';
+import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
 
 @Component({
   selector: 'app-booking-room',
@@ -16,6 +19,9 @@ export class BookingRoomComponent {
   roomId: number = 0;
   roomTypeId: number = 0;
   bookingId: number = 0;
+
+  galleryOptions: NgxGalleryOptions[] = [];
+  galleryImages: NgxGalleryImage[] = [];
 
   checkIn: Date = new Date;
   checkOut: Date = new Date;
@@ -46,6 +52,52 @@ export class BookingRoomComponent {
       this.checkIn = this.dataService.bookingDetails.checkInDate;
       this.checkOut = this.dataService.bookingDetails.checkOutDate;
       this.buildBookingForm();
+
+      this.galleryOptions = [
+        {
+          width: '500px',
+          height: '450px',
+          thumbnailsColumns: 4,
+          imageAnimation: NgxGalleryAnimation.Slide
+        },
+        // max-width 800
+        {
+          breakpoint: 800,
+          width: '100%',
+          height: '600px',
+          imagePercent: 80,
+          thumbnailsPercent: 20,
+          thumbnailsMargin: 20,
+          thumbnailMargin: 20
+        },
+        // max-width 400
+        {
+          breakpoint: 500,
+          preview: false
+        }
+      ];
+  
+      this.galleryImages = [
+        {
+          small: 'assets/img/' + this.roomTypeId + '/1.jpg',
+          medium: 'assets/img/' + this.roomTypeId + '/1.jpg',
+          big: 'assets/img/' + this.roomTypeId + '/1.jpg'
+        },
+        {
+          small: 'assets/img/' + this.roomTypeId + '/2.jpg',
+          medium: 'assets/img/' + this.roomTypeId + '/2.jpg',
+          big: 'assets/img/' + this.roomTypeId + '/2.jpg'
+        },
+        {
+          small: 'assets/img/' + this.roomTypeId + '/3.jpg',
+          medium: 'assets/img/' + this.roomTypeId + '/3.jpg',
+          big: 'assets/img/' + this.roomTypeId + '/3.jpg'
+        },{
+          small: 'assets/img/' + this.roomTypeId + '/4.jpg',
+          medium: 'assets/img/' + this.roomTypeId + '/4.jpg',
+          big: 'assets/img/' + this.roomTypeId + '/4.jpg'
+        }
+      ];
   }
 
   buildBookingForm() {

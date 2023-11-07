@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Room } from '../models/Room';
 import { RoomType } from '../models/RoomType';
 import { Booking } from '../models/Booking';
@@ -11,8 +11,12 @@ import { Booking } from '../models/Booking';
 export class DataService {
 
   bookingDetails!: Booking;
+  
+  rooms: Room[] = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { 
+
+  }
 
   API_URL: string = 'http://localhost:3000';
 
@@ -42,5 +46,13 @@ export class DataService {
     return this.httpClient.post<Booking>(this.API_URL + '/bookingData', data, httpHeader)
   };
 
+  filterRooms(roomTypeId: number) {
+    this.rooms = this.rooms.filter(room => room.roomType === roomTypeId)
+
+  }
+
+  getRooms() {
+    return this.getAvailableRooms().subscribe((res) => this.rooms = res)
+  }
 
 }

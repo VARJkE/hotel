@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { Booking } from 'src/app/models/Booking';
 import { Room } from 'src/app/models/Room';
 import { RoomType } from 'src/app/models/RoomType';
@@ -11,9 +13,12 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./available-rooms.component.css']
 })
 export class AvailableRoomsComponent {
-
+  
+  filterForm!: FormGroup;
   availableRooms: Array<Room> = [];
   roomTypes: Array<RoomType> = [];
+
+  
   bookingData: any = [];
   checkIn: Date = new Date;
   checkOut: Date = new Date;
@@ -22,25 +27,36 @@ export class AvailableRoomsComponent {
     private route: ActivatedRoute,
     private dataService: DataService,
     private router: Router,
+    private formBuilder: FormBuilder
   ) {
 
     this.getRoomTypes()
     this.getBookings()
     this.getRooms()
+    this.dataService.getRooms();
     
-
   }
 
 
   ngOnInit() {
-
+    this.buildFilterForm();
     this.route.queryParams.subscribe(params => {
       this.checkIn = params['checkin'];
       this.checkOut = params['checkout'];
 
-    })
+    });
 
+  }
 
+  buildFilterForm() {
+    this.filterForm = this.formBuilder.group(
+      {
+        roomType: ['0']
+      }
+    );
+    
+      
+      
   }
 
   getRooms() {
@@ -70,6 +86,16 @@ export class AvailableRoomsComponent {
         
       }
     }
+  }
+
+  filterRoom() {
+    this.dataService.getRooms();
+    const roomTypeId: number = Number(this.filterForm.get('roomType')?.value);
+    if (roomTypeId === 0) {
+      this.getRooms();
+    }
+    this.dataService.filterRooms(roomTypeId);
+    this.availableRooms = this.dataService.rooms
   }
 
   addBooking(roomId: any, roomTypeId: any) {

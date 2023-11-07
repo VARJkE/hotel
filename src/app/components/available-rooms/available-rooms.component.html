@@ -8,34 +8,50 @@
             </div>
         </div>
 
+
+        <div class="row">
+            <div class="col-md-12">
+                <form [formGroup]="filterForm" (ngSubmit)="this.filterRoom()">
+                    <label for="roomType">Room Type:</label>
+                    <select formControlName="roomType" id="roomType">
+                        <option value="0">All</option>
+                        <option [value]="roomType.id" *ngFor="let roomType of roomTypes">{{roomType.title}}</option>
+                    </select>
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
+        </div>
+
+
         <div class="row" *ngFor="let room of availableRooms">
             <div class="available-room_list" *ngIf="room.isAvailable">
-                    <div class="col-md-3">
-                        <div id="serv_hover" class="room">
-                            <div class="room_img">
-                                <figure><img src= "assets/img/{{room.roomType}}/4.jpg" alt="#" /></figure>
-                            </div>
+                <div class="col-md-3">
+                    <div id="serv_hover" class="room">
+                        <div class="room_img">
+                            <figure><img src="assets/img/{{room.roomType}}/4.jpg" alt="#" /></figure>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="available-room_main">
-                            <div class="available-room_head">
-                                <h3>{{roomTypes[room.roomType-1].title}}</h3>
-                                <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there</p>
-                                <p>Status: {{ room.isAvailable ? 'Available' : 'Not Available' }}</p>
-                            </div>
-                            <div class="available-room_desc">
-                                <p>Breakfast</p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="available-room_main">
+                        <div class="available-room_head">
+                            <h3>{{roomTypes[room.roomType-1].title}}</h3>
+                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there</p>
+                            <p>Status: {{ room.isAvailable ? 'Available' : 'Not Available' }}</p>
+                        </div>
+                        <div class="available-room_desc">
+                            <p>Breakfast</p>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="available-room_price">
-                            <p class="price">Price: {{roomTypes[room.roomType-1].price}} &#8382;</p>
-                            <button type="submit" class="book_btn" (click)="addBooking(room.id, room.roomType)">Book Now</button>
-                        </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="available-room_price">
+                        <p class="price">Price: {{roomTypes[room.roomType-1].price}} &#8382;</p>
+                        <button type="submit" class="book_btn" (click)="addBooking(room.id, room.roomType)">Book
+                            Now</button>
                     </div>
-                    <!-- <div class="col-md-3">
+                </div>
+                <!-- <div class="col-md-3">
                     <div class="available-room_filter">
     
                     </div>
