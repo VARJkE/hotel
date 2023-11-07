@@ -46,13 +46,15 @@ export class DataService {
     return this.httpClient.post<Booking>(this.API_URL + '/bookingData', data, httpHeader)
   };
 
-  filterRooms(roomTypeId: number) {
-    this.rooms = this.rooms.filter(room => room.roomType === roomTypeId)
+  // filterRooms(roomTypeId: number) {
+  //   this.rooms = this.rooms.filter(room => room.roomType === roomTypeId)
 
-  }
+  // }
 
-  getRooms() {
-    return this.getAvailableRooms().subscribe((res) => this.rooms = res)
-  }
+  // getRooms() {
+  //   return this.getAvailableRooms().subscribe((res) => this.rooms = res)
+  // }
+
+  
 
 }
