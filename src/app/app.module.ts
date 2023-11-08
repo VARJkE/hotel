@@ -22,6 +22,7 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
 import { BookingRoomComponent } from './components/booking-room/booking-room.component';
 import {DatePipe} from '@angular/common';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     AvailableRoomsComponent,
     RoomDetailsComponent,
     BookingRoomComponent,
+    LoginComponent,
     
   ],
   imports: [

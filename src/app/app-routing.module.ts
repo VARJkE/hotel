@@ -8,6 +8,7 @@ import { MainComponent } from './components/main/main.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { BookingRoomComponent } from './components/booking-room/booking-room.component';
 import { AvailableRoomsComponent } from './components/available-rooms/available-rooms.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
     { path: 'main', title: 'Main', component: MainComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'room/details', title: 'Room Details', component: RoomDetailsComponent},
     { path: 'rooms/booking', title: 'Booking', component: BookingRoomComponent},
     { path: 'rooms/available', title: 'Available Rooms', component: AvailableRoomsComponent},
+    { path: 'login', title: 'Login', component: LoginComponent},
     
 
     { path: '', redirectTo: '/main', pathMatch: 'full'},
