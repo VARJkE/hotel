@@ -1,0 +1,42 @@
+.about {
+    background-color: #fff;
+    padding: 60px 0 30px 0;
+    margin-top: 120px;
+}
+
+.about .titlepage {
+    text-align: left;
+    padding-bottom: 0;
+    max-width: 443px;
+    width: 100%;
+    float: right;
+}
+
+.about .titlepage h2 {
+    margin-bottom: 35px;
+}
+
+.about .titlepage p {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 28px;
+    padding-bottom: 35px;
+}
+
+.about_img {
+    margin-right: 40px;
+    overflow: hidden;
+}
+
+.about_img figure {
+    margin: 0;
+}
+
+.about_img figure img {
+    width: 100%;
+    transition: all .5s;
+}
+
+.about_img figure img:hover {
+    transform: scale(1.2);
+}

@@ -2,3 +2,18 @@
     display: inline-block; 
     margin-bottom: 20px; 
 }
+
+.room-details {
+    margin-top: 120px;
+    min-height: 50vh;
+}
+
+.room-desc {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: 700;
+    color: #000;
+    font-size: 16px;
+}

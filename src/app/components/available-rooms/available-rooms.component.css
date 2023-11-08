@@ -1,0 +1,66 @@
+.available-room {
+    margin-top: 85px;
+    border: 1px solid #e7e7e7;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 50vh;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.available-room_list {
+    margin-bottom: 25px;
+    display: flex;
+    border: 1px solid #e7e7e7;
+    padding: 15px;
+    margin-left: 20px;
+    border-radius: 7px;
+}
+
+.price {
+    font-weight: 700;
+    color: #000;
+    font-size: 16px;
+}
+
+.available-room_price {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.available-room h3 {
+    color: #112e42;
+    font-size: 25px;
+    line-height: 20px;
+    font-weight: 500;
+    transition: ease-in all 0.5s;
+    margin-top: 8px;
+}
+
+.book_btn {
+    background-color: #112e42;
+    max-width: 189px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 20px;
+    transition: ease-in 0.5s;
+    display: block;
+}
+
+.book_btn:hover {
+    background-color: #00abf0;
+    color: #fff;
+    transition: ease-in 0.5s;
+}

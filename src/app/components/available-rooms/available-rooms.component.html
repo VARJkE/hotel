@@ -10,40 +10,38 @@
 
 
         <div class="row">
-            <div class="col-md-12">
-                <!-- <form [formGroup]="filterForm" (ngSubmit)="this.filterRoom()"> -->
-                <!-- <label for="roomType">Room Type:</label>
-                    <select [(ngModel)]="selectedRoomTypeId" id="roomType" (ngModelChange)="onRoomTypeChange($event)">
-                        <option value="0">All</option>
-                        <option [value]="roomType.id" *ngFor="let roomType of roomTypes">{{roomType.title}}</option>
-                    </select> -->
+            <div class="filters">
                 <mat-form-field color="accent">
                     <mat-label>Room Type</mat-label>
-                    <mat-select [(ngModel)]="selectedRoomTypeId" id="roomType"
+                    <mat-select [(ngModel)]="selectedRoomTypeId"
                         (ngModelChange)="onRoomTypeChange($event)" multiple>
-                        <!-- <mat-option value="0">
-                            All
-                        </mat-option> -->
                         <mat-option *ngFor="let roomType of roomTypes" [value]="roomType.id">
                             {{roomType.title}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                <!-- </form> -->
+
+                <mat-form-field color="accent">
+                    <mat-label>Currency</mat-label>
+                    <mat-select [(ngModel)]="selectedCurrency">
+                        <mat-option value="GEL">GEL</mat-option>
+                        <mat-option value="USD">USD</mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
         </div>
 
 
         <div class="row" *ngFor="let room of availableRooms">
             <div class="available-room_list" *ngIf="room.isAvailable">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div id="serv_hover" class="room">
                         <div class="room_img">
                             <figure><img src="assets/img/{{room.roomType}}/4.jpg" alt="#" /></figure>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="available-room_main">
                         <div class="available-room_head">
                             <h3>{{roomTypes[room.roomType-1].title}}</h3>
@@ -57,19 +55,25 @@
                 </div>
                 <div class="col-md-2">
                     <div class="available-room_price">
-                        <p class="price">Price: {{roomTypes[room.roomType-1].price}} &#8382;</p>
+                        <p class="price" *ngFor="let rate of ratesNbg; let i = index">
+                            <ng-container [ngSwitch]="selectedCurrency">
+                                <span *ngSwitchCase="'GEL'">
+                                    {{roomTypes[room.roomType-1].price | currency: selectedCurrency}}
+                                </span>
+                                <span *ngSwitchCase="'USD'">
+                                    {{roomTypes[room.roomType-1].price / rate.currencies[i].rate | currency:
+                                    selectedCurrency}}
+                                </span>
+                            </ng-container>
+                        </p>
                         <button type="submit" class="book_btn" (click)="addBooking(room.id, room.roomType)">Book
                             Now</button>
                     </div>
                 </div>
-                <!-- <div class="col-md-3">
-                    <div class="available-room_filter">
-    
-                    </div>
-                </div> -->
 
 
             </div>
+
         </div>
 
     </div>

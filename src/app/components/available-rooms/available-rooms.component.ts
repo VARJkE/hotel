@@ -3,12 +3,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Booking } from 'src/app/models/Booking';
+import { Rate } from 'src/app/models/Rate';
 import { Room } from 'src/app/models/Room';
 import { RoomType } from 'src/app/models/RoomType';
 import { DataService } from 'src/app/service/data.service';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-available-rooms',
@@ -23,8 +21,10 @@ export class AvailableRoomsComponent {
   availableRooms: Array<Room> = [];
   roomTypes: Array<RoomType> = [];
   selectedRoomTypeId: Array<number> = [];
+  ratesNbg: Rate[] = [];
+  selectedCurrency: string = 'GEL'
 
-  selectedRoomTypeIdSubject = new BehaviorSubject<Array<number>>([0]);
+  selectedRoomTypeIdSubject = new BehaviorSubject<Array<number>>([]);
 
   
   bookingData: any = [];
@@ -34,45 +34,38 @@ export class AvailableRoomsComponent {
   constructor(
     private route: ActivatedRoute,
     private dataService: DataService,
-    private router: Router,
-    private formBuilder: FormBuilder
-  ) {
+    private router: Router
+  ) 
+  {
 
     this.getRoomTypes()
     this.getBookings()
-    // this.getRooms()
-    // this.dataService.getRooms();
-    
+
   }
 
 
   ngOnInit() {
-    // this.buildFilterForm();
+
     this.route.queryParams.subscribe(params => {
       this.checkIn = params['checkin'];
       this.checkOut = params['checkout'];
-
     });
+
     this.getRooms();
+    this.getRate();
 
     this.selectedRoomTypeIdSubject.subscribe(selectedRoomTypeId => {
+        this.checkRoomAvailability(this.checkIn, this.checkOut);
         this.availableRooms = this.originalAvailableRooms.filter(room => selectedRoomTypeId.includes(room.roomType));
     });
 
   }
 
-  // buildFilterForm() {
-  //   this.filterForm = this.formBuilder.group(
-  //     {
-  //       roomType: ['0']
-  //     }
-  //   );
-  // }
-
   getRooms() {
     return this.dataService.getAvailableRooms().subscribe((data) => {
       this.originalAvailableRooms = data;
       this.availableRooms = data;
+      this.checkRoomAvailability(this.checkIn, this.checkOut)
     });
   }
 
@@ -82,6 +75,11 @@ export class AvailableRoomsComponent {
 
   getRoomTypes() {
     this.dataService.getRoomTypes().subscribe((res: RoomType[]) => this.roomTypes = res)
+  }
+
+  getRate() {
+    return this.dataService.getRateFromNbg().subscribe((rate: Rate[]) => this.ratesNbg = rate);
+    
   }
 
 
@@ -98,18 +96,9 @@ export class AvailableRoomsComponent {
         }
         
       }
+
     }
   }
-
-  // filterRoom() {
-  //   this.dataService.getRooms();
-  //   const roomTypeId: number = Number(this.filterForm.get('roomType')?.value);
-  //   if (roomTypeId === 0) {
-  //     this.getRooms();
-  //   }
-  //   this.dataService.filterRooms(roomTypeId);
-  //   this.availableRooms = this.dataService.rooms
-  // }
 
   addBooking(roomId: any, roomTypeId: any) {
     // this.router.navigate(['rooms/booking'], {
@@ -123,7 +112,6 @@ export class AvailableRoomsComponent {
     // })
     this.dataService.bookingDetails = new Booking(this.bookingData.length + 1, roomId, roomTypeId, this.checkIn, this.checkOut, '', '', 0, 0)
     this.router.navigate(['rooms/booking']);
-    console.log(this.dataService.bookingDetails)
   }
 
   onRoomTypeChange(selectedRoomTypeId: Array<number>) {

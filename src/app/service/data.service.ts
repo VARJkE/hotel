@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Room } from '../models/Room';
 import { RoomType } from '../models/RoomType';
 import { Booking } from '../models/Booking';
+import { Rate } from '../models/Rate';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class DataService {
   }
 
   API_URL: string = 'http://localhost:3000';
+  NBG_API: string = 'https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json/?'
 
   getAvailableRooms(): Observable<Array<Room>>{
    return this.httpClient.request<Array<Room>>('GET', this.API_URL + '/availableRooms')
@@ -46,14 +48,11 @@ export class DataService {
     return this.httpClient.post<Booking>(this.API_URL + '/bookingData', data, httpHeader)
   };
 
-  // filterRooms(roomTypeId: number) {
-  //   this.rooms = this.rooms.filter(room => room.roomType === roomTypeId)
-
-  // }
-
-  // getRooms() {
-  //   return this.getAvailableRooms().subscribe((res) => this.rooms = res)
-  // }
+  getRateFromNbg(): Observable<Array<Rate>> {
+    const today = new Date();
+    let todayDate = today.toISOString().split('T')[0];
+    return this.httpClient.request<Array<Rate>>('GET', this.NBG_API + `currencies=USD&date=${todayDate}`)
+  }
 
   
 

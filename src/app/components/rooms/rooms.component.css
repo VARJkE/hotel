@@ -1,0 +1,61 @@
+.price {
+    font-weight: 700;
+    color: #000;
+    font-size: 16px;
+}
+
+.room_img {
+    cursor: pointer;
+}
+
+.our_room {
+    padding: 60px 0 30px 0;
+    margin-top: 120px;
+}
+
+.our_room .titlepage {
+    text-align: center;
+}
+
+.our_room .titlepage p {
+    color: #112e42;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.our_room .room {
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 30px;
+    transition: ease-in all 0.5s;
+}
+
+.our_room .room .room_img {
+    overflow: hidden;
+}
+
+.our_room .room .room_img figure {
+    margin: 0;
+}
+
+.our_room .room .room_img figure img {
+    width: 100%;
+    transition: all .5s;
+}
+
+.our_room .room .room_img figure img:hover {
+    transform: scale(1.2);
+}
+
+.our_room .room .bed_room {
+    padding: 33px 30px;
+}
+
+.our_room .room .bed_room h3 {
+    color: #121212;
+    font-size: 25px;
+    line-height: 20px;
+    font-weight: 500;
+    transition: ease-in all 0.5s;
+    margin: auto;
+}
