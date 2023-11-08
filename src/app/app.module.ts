@@ -14,6 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AvailableRoomsComponent } from './components/available-rooms/available-rooms.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,6 +46,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     MatInputModule,
     MatNativeDateModule,
     MatFormFieldModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

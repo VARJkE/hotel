@@ -6,11 +6,15 @@ import { Booking } from 'src/app/models/Booking';
 import { Room } from 'src/app/models/Room';
 import { RoomType } from 'src/app/models/RoomType';
 import { DataService } from 'src/app/service/data.service';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-available-rooms',
   templateUrl: './available-rooms.component.html',
-  styleUrls: ['./available-rooms.component.css']
+  styleUrls: ['./available-rooms.component.css'],
+  
 })
 export class AvailableRoomsComponent {
   
@@ -18,9 +22,9 @@ export class AvailableRoomsComponent {
   originalAvailableRooms: Array<Room> = [];
   availableRooms: Array<Room> = [];
   roomTypes: Array<RoomType> = [];
-  selectedRoomTypeId: number = 0;
+  selectedRoomTypeId: Array<number> = [];
 
-  selectedRoomTypeIdSubject = new BehaviorSubject<number>(0);
+  selectedRoomTypeIdSubject = new BehaviorSubject<Array<number>>([0]);
 
   
   bookingData: any = [];
@@ -52,11 +56,7 @@ export class AvailableRoomsComponent {
     this.getRooms();
 
     this.selectedRoomTypeIdSubject.subscribe(selectedRoomTypeId => {
-      if (Number(selectedRoomTypeId) === 0) {
-        this.availableRooms = this.originalAvailableRooms;
-      } else {
-        this.availableRooms = this.originalAvailableRooms.filter(room => Number(room.roomType) === Number(selectedRoomTypeId));
-      }
+        this.availableRooms = this.originalAvailableRooms.filter(room => selectedRoomTypeId.includes(room.roomType));
     });
 
   }
@@ -126,8 +126,8 @@ export class AvailableRoomsComponent {
     console.log(this.dataService.bookingDetails)
   }
 
-  onRoomTypeChange(selectedRoomTypeId: number) {
-    const roomTypeId = Number(selectedRoomTypeId)
+  onRoomTypeChange(selectedRoomTypeId: Array<number>) {
+    const roomTypeId: Array<number> = selectedRoomTypeId
     this.selectedRoomTypeIdSubject.next(roomTypeId);
   }
 

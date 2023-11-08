@@ -12,11 +12,23 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- <form [formGroup]="filterForm" (ngSubmit)="this.filterRoom()"> -->
-                    <label for="roomType">Room Type:</label>
+                <!-- <label for="roomType">Room Type:</label>
                     <select [(ngModel)]="selectedRoomTypeId" id="roomType" (ngModelChange)="onRoomTypeChange($event)">
                         <option value="0">All</option>
                         <option [value]="roomType.id" *ngFor="let roomType of roomTypes">{{roomType.title}}</option>
-                    </select>
+                    </select> -->
+                <mat-form-field color="accent">
+                    <mat-label>Room Type</mat-label>
+                    <mat-select [(ngModel)]="selectedRoomTypeId" id="roomType"
+                        (ngModelChange)="onRoomTypeChange($event)" multiple>
+                        <!-- <mat-option value="0">
+                            All
+                        </mat-option> -->
+                        <mat-option *ngFor="let roomType of roomTypes" [value]="roomType.id">
+                            {{roomType.title}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
                 <!-- </form> -->
             </div>
         </div>
