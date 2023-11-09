@@ -19,6 +19,10 @@ export class AuthService {
     return localStorage.getItem('token');
   };
 
+  removeToken() {
+    localStorage.removeItem('token');
+  }
+
   isLoggedIn() {
     return this.getToken() !== null;
   };
@@ -29,5 +33,9 @@ export class AuthService {
       return of (true)
     }
     return throwError( () => new Error('Incorrect Login'))
+  }
+
+  logout() {
+    this.router.navigate(['login'])
   }
 }

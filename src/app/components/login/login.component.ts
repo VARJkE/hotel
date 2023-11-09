@@ -22,6 +22,9 @@ export class LoginComponent {
 
   ngOnInit() {
     this.buildLoginForm();
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['admin'])
+    }
   }
 
   buildLoginForm() {

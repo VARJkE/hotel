@@ -1,1 +1,20 @@
-<p>bookings works!</p>
+<div class="col-4 mx-2 mt-2">
+    <div
+      class="card bg-dark text-white mt-2"
+      style="border-radius: 1rem"
+      *ngFor="let booking of bookingsData | async"
+    >
+      <div class="card-body p-2 text-center">
+        <div>
+          <h5>{{booking.id}}</h5>
+          <h5>{{booking.roomId}}</h5>
+          <h5>{{booking.guestFullName}}</h5>
+          <h5>{{booking.checkInDate}}</h5>
+          <h5>{{booking.checkOutDate}}</h5>
+          <!-- <button class="btn btn-success" [routerLink]="['user', user.id]">
+            Details
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
