@@ -52,7 +52,7 @@ import { LoginComponent } from './components/login/login.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxGalleryModule
+    NgxGalleryModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
