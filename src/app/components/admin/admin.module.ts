@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { BookingsDetailsComponent } from './components/bookings-details/bookings-details.component';
+import { AsideComponent } from './components/aside/aside.component';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { BookingsDetailsComponent } from './components/bookings-details/bookings
     HomeComponent,
     AdminDashboardComponent,
     BookingsComponent,
-    BookingsDetailsComponent
+    BookingsDetailsComponent,
+    AsideComponent
   ],
   imports: [
     CommonModule,

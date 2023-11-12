@@ -151,7 +151,7 @@
       "checkOutDate": "2023-11-15",
       "guestFullName": "Lado Chopinovi",
       "guestEmail": "lado.chopinovi@gmail.com",
-      "guestPhone": "595002979",
+      "guestPhoneNumber": "595002979",
       "guestsNumber": "4"
     },
     {
@@ -161,7 +161,7 @@
       "checkOutDate": "2023-11-20",
       "guestFullName": "Lado Chopinovi",
       "guestEmail": "lado.chopinovi@gmail.com",
-      "guestPhone": "595002979",
+      "guestPhoneNumber": "595002979",
       "guestsNumber": "2"
     },
     {
@@ -173,6 +173,17 @@
       "roomTypeId": 4,
       "checkInDate": "2023-11-23",
       "checkOutDate": "2023-11-25",
+      "guestsNumber": "1"
+    },
+    {
+      "id": 4,
+      "guestFullName": "Smirnova A",
+      "guestEmail": "ostenka@mail.ru",
+      "guestPhoneNumber": "5505552979",
+      "roomId": 8,
+      "roomTypeId": 6,
+      "checkInDate": "2023-11-21",
+      "checkOutDate": "2023-11-30",
       "guestsNumber": "1"
     }
   ]

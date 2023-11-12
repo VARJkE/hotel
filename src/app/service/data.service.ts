@@ -35,8 +35,8 @@ export class DataService {
     
   }
 
-  getBookingDetails(): Observable<Array<any>>{
-    return this.httpClient.request<Array<any>>('GET',  this.API_URL + '/bookingData')
+  getBookingDetails(): Observable<Array<Booking>>{
+    return this.httpClient.request<Array<Booking>>('GET',  this.API_URL + '/bookingData')
   }
 
   postBookingData(data: Booking): Observable<Booking>{

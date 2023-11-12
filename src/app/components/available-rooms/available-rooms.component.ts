@@ -27,7 +27,7 @@ export class AvailableRoomsComponent {
   selectedRoomTypeIdSubject = new BehaviorSubject<Array<number>>([]);
 
   
-  bookingData: any = [];
+  bookingData: Booking[] = [];
   checkIn: Date = new Date;
   checkOut: Date = new Date;
 
@@ -70,7 +70,7 @@ export class AvailableRoomsComponent {
   }
 
   getBookings() {
-    return this.dataService.getBookingDetails().subscribe((res) => this.bookingData = res)
+    return this.dataService.getBookingDetails().subscribe((res: Booking[]) => this.bookingData = res)
   }
 
   getRoomTypes() {
