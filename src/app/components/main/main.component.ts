@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { DataService } from 'src/app/service/data.service';
 
 
 @Component({
@@ -20,7 +19,6 @@ export class MainComponent {
     private formBuilder: FormBuilder,
     private router: Router,
     private datePipe: DatePipe,
-    private dataService: DataService,
     ) {
     
   }

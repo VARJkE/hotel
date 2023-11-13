@@ -111,7 +111,8 @@ export class BookingRoomComponent {
         roomTypeId: [this.roomTypeId],
         checkInDate: [this.checkIn],
         checkOutDate: [this.checkOut],
-        guestsNumber: ['1']
+        guestsNumber: ['1'],
+        addDateTime: [new Date()]
       }) 
   }
 

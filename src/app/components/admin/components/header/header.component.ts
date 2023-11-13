@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit, OnDestroy{
   totalBookings: number = 0;
   monthlyBookings: number = 0;
   weeklyBookings: number = 0;
+  dailyBookings: number = 0;
 
   constructor (
     private authService: AuthService,
@@ -35,8 +36,18 @@ export class HeaderComponent implements OnInit, OnDestroy{
 
       const currentDate = new Date();
       const currentMonthBookings = this.bookingsData.filter((booking) => {
-        // const bookingDate = new Date(booking)
+        const bookingDate = new Date(booking.addDateTime);
+        return currentDate.getMonth() === bookingDate.getMonth() && currentDate.getFullYear() === bookingDate.getFullYear();
       })
+
+      const currentDayBookings = this.bookingsData.filter((booking) => {
+        const bookingDate = new Date(booking.addDateTime);
+        return currentDate.getDay() === bookingDate.getDay()
+      })
+
+      this.monthlyBookings = currentMonthBookings.length;
+      this.dailyBookings = currentDayBookings.length;
+
     })
   }
 

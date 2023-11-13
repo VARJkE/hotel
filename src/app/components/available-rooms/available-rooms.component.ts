@@ -110,7 +110,7 @@ export class AvailableRoomsComponent {
     //     checkout: this.checkOut
     //   }
     // })
-    this.dataService.bookingDetails = new Booking(this.bookingData.length + 1, roomId, roomTypeId, this.checkIn, this.checkOut, '', '', 0, 0)
+    this.dataService.bookingDetails = new Booking(this.bookingData.length + 1, roomId, roomTypeId, this.checkIn, this.checkOut, '', '', 0, 0, new Date())
     this.router.navigate(['rooms/booking']);
   }
 

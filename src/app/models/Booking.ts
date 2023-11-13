@@ -1,24 +1,14 @@
 export class Booking {
-    id: number;
-    roomId: number;
-    roomTypeId: number;
-    checkInDate: Date;
-    checkOutDate: Date;
-    guestFullName: string;
-    guestEmail: string;
-    guestPhoneNumber: number;
-    guestsNumber: number;
-
-    constructor(id: number, roomId: number, roomTypeId: number, checkInDate: Date, checkOutDate: Date, guestFullName: string, guestEmail: string, guestPhoneNumber: number, guestsNumber: number) {
-        this.id = id,
-        this.roomId = roomId,
-        this.roomTypeId = roomTypeId,
-        this.checkInDate = checkInDate,
-        this.checkOutDate = checkOutDate,
-        this.guestFullName = guestFullName,
-        this.guestEmail = guestEmail,
-        this.guestPhoneNumber = guestPhoneNumber,
-        this.guestsNumber = guestsNumber
-    }
+    constructor(
+        public id: number,
+        public roomId: number,
+        public roomTypeId: number,
+        public checkInDate: Date,
+        public checkOutDate: Date,
+        public guestFullName: string,
+        public guestEmail: string,
+        public guestPhoneNumber: number,
+        public guestsNumber: number,
+        public addDateTime: Date
+    ) {}
 }
-
