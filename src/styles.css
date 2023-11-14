@@ -35,46 +35,6 @@ a {
     transition: all .3s ease-in-out;
 }
 
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    letter-spacing: 0;
-    font-weight: normal;
-    position: relative;
-    padding: 0 0 10px 0;
-    font-weight: normal;
-    line-height: normal;
-    color: #111111;
-    margin: 0
-}
-
-h1 {
-    font-size: 24px;
-}
-
-h2 {
-    font-size: 22px;
-}
-
-h3 {
-    font-size: 18px;
-}
-
-h4 {
-    font-size: 16px
-}
-
-h5 {
-    font-size: 14px
-}
-
-h6 {
-    font-size: 13px
-} */
-
 *,
 *::after,
 *::before {
@@ -165,21 +125,3 @@ button {
     padding: 0;
 }
 
-.titlepage h2::before {
-    position: absolute;
-    content: "";
-    background-color: #00abf0;
-    width: 20px;
-    height: 4px;
-    transform: rotate(-36deg);
-}
-
-.titlepage h2::after {
-    position: absolute;
-    content: "";
-    background-color: #00abf0;
-    width: 20px;
-    height: 4px;
-    transform: rotate(-36deg);
-    bottom: 10px;
-}

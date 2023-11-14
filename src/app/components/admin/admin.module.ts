@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { BookingsDetailsComponent } from './components/bookings-details/bookings-details.component';
 import { AsideComponent } from './components/aside/aside.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
 
 
 
@@ -20,7 +21,8 @@ import { AsideComponent } from './components/aside/aside.component';
     AdminDashboardComponent,
     BookingsComponent,
     BookingsDetailsComponent,
-    AsideComponent
+    AsideComponent,
+    RoomsComponent
   ],
   imports: [
     CommonModule,

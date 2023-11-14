@@ -1,9 +1,9 @@
-  <div class="ml-17 min-h-70">
+<div class="ml-17 min-h-70">
     <div class="row">
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>All Bookings</h6>
+                    <h6>All Rooms</h6>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -12,50 +12,51 @@
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Guest</th>
+                                        Room Type</th>
                                     <th
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Phone Number</th>
+                                        Price</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Check IN</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Check OUT</th>
+                                        Services</th>
+                                    
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let booking of bookingsData | async">
+                                <tr *ngFor="let room of rooms | async">
                                     <td>
-                                        <p class="align-middle ps-3 text-sm">{{booking.id}}</p>
+                                        <p class="align-middle ps-3 text-sm">{{room.id}}</p>
                                     </td>
                                     <td>
                                         
                                         <div class="d-flex px-2 py-1">
-                                            <!-- <div>
-                                                <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3"
-                                                    alt="user1">
-                                            </div> -->
+                                            <div>
+                                                <img src="../assets/img/{{room.id}}/1.jpg" class="avatar avatar-sm me-3"
+                                                    alt="room">
+                                            </div>
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{booking.guestFullName}}</h6>
-                                                <p class="text-xs text-secondary mb-0">{{booking.guestEmail}}</p>
+                                                <h6 class="mb-0 text-sm text-uppercase">{{room.title}}</h6>
+                                                <p class="text-xs text-secondary mb-0"></p>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <p class="text-xs text-secondary mb-0">{{booking.guestPhoneNumber}}</p>
+                                        <p class="text-xs text-secondary mb-0">{{room.price}} GEL</p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <span class="badge badge-sm bg-gradient-success">{{booking.checkInDate | date: 'dd-MM-YYYY' }}</span>
+                                        <p class="text-xs text-secondary mb-0 text-uppercase">
+                                            <ng-container *ngFor="let service of room.services">
+                                                {{service}}
+                                            </ng-container>
+                                            
+                                        </p>
                                     </td>
-                                    <td class="align-middle text-center">
-                                        <span class="badge badge-sm bg-gradient-secondary">{{booking.checkOutDate | date: 'dd-MM-YYYY'}}</span>
-                                    </td>
+                                    
                                     <td class="align-middle">
                                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
                                              data-original-title="Booking Details">
-                                            Details
+                                            Edit
                                         </a>
                                     </td>
                                 </tr>

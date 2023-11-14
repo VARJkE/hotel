@@ -4,6 +4,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { HomeComponent } from './components/home/home.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { BookingsDetailsComponent } from './components/bookings-details/bookings-details.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
 
 const routes: Routes = [
   { path: '', component: AdminDashboardComponent,
@@ -11,6 +12,7 @@ const routes: Routes = [
         { path: 'home', component: HomeComponent},
         { path: 'bookings', component: BookingsComponent},
         { path: 'bookings/details/:id', component: BookingsDetailsComponent},
+        { path: 'rooms', component: RoomsComponent},
         { path: '', redirectTo: 'home', pathMatch: 'full'}
       ],
   },

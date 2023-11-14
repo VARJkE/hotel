@@ -19,7 +19,6 @@
     display: flex;
     border: 1px solid #e7e7e7;
     padding: 15px;
-    margin-left: 20px;
     border-radius: 7px;
 }
 
@@ -63,4 +62,8 @@
     background-color: #00abf0;
     color: #fff;
     transition: ease-in 0.5s;
+}
+
+.ml-20 {
+    margin-left: 20px;
 }

@@ -40,15 +40,31 @@ export class HeaderComponent implements OnInit, OnDestroy{
         return currentDate.getMonth() === bookingDate.getMonth() && currentDate.getFullYear() === bookingDate.getFullYear();
       })
 
+      const currentWeekBookings = this.bookingsData.filter((booking) => {
+        const bookingDate = new Date(booking.addDateTime);
+        const currentWeek = this.getWeekNumber(currentDate);
+        const bookingWeek = this.getWeekNumber(bookingDate);
+        return currentWeek === bookingWeek && bookingDate.getFullYear() === currentDate.getFullYear();
+      });
+      
+      this.weeklyBookings = currentWeekBookings.length;
+
       const currentDayBookings = this.bookingsData.filter((booking) => {
         const bookingDate = new Date(booking.addDateTime);
-        return currentDate.getDay() === bookingDate.getDay()
+        return currentDate.getDate() === bookingDate.getDate() && currentDate.getMonth() === bookingDate.getMonth() && currentDate.getFullYear() === bookingDate.getFullYear()
       })
 
       this.monthlyBookings = currentMonthBookings.length;
       this.dailyBookings = currentDayBookings.length;
+      console.log(currentDayBookings, currentDate.getDate())
 
     })
+  }
+
+  getWeekNumber(date: Date): number {
+    const onejan = new Date(date.getFullYear(), 0, 1);
+    const millisecsInDay = 86400000;
+    return Math.ceil((((date.getTime() - onejan.getTime()) / millisecsInDay) + onejan.getDay() + 1) / 7);
   }
 
   logout() {

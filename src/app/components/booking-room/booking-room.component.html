@@ -36,26 +36,7 @@
                             <input type="tel" class="booking_form_input" placeholder="Phone Number"
                                 formControlName="guestPhoneNumber">
                         </div>
-                        <!-- <div class="col-md-12">
-                            <span>Check In</span>
-                            <mat-form-field appearance="outline">
-                                <mat-label>mm/dd/yyyy</mat-label>
-                                <input formControlName="checkInDate" matInput [matDatepicker]="checkinPicker"
-                                    placeholder="mm/dd/yyyy">
-                                <mat-datepicker-toggle matSuffix [for]="checkinPicker"></mat-datepicker-toggle>
-                                <mat-datepicker #checkinPicker></mat-datepicker>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-12">
-                            <span>Check Out</span>
-                            <mat-form-field appearance="outline" color="accent">
-                                <mat-label>mm/dd/yyyy</mat-label>
-                                <input formControlName="checkOutDate" matInput [matDatepicker]="checkoutPicker"
-                                    placeholder="mm/dd/yyyy">
-                                <mat-datepicker-toggle matSuffix [for]="checkoutPicker"></mat-datepicker-toggle>
-                                <mat-datepicker #checkoutPicker></mat-datepicker>
-                            </mat-form-field>
-                        </div> -->
+
                         
                         <div class="col-md-6" class="date_picker">
                             <label class="date_text">CheckIn:</label>
@@ -75,7 +56,6 @@
                             </label>
 
                         </div>
-
                         
                         <div class="col-md-12">
                             <button class="send_btn" type="submit" [disabled]="bookingForm.invalid">Book Now</button>
