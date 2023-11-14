@@ -56,7 +56,6 @@ export class HeaderComponent implements OnInit, OnDestroy{
 
       this.monthlyBookings = currentMonthBookings.length;
       this.dailyBookings = currentDayBookings.length;
-      console.log(currentDayBookings, currentDate.getDate())
 
     })
   }
