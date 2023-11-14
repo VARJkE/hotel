@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
+import { Room } from 'src/app/models/Room';
 import { RoomType } from 'src/app/models/RoomType';
 import { DataService } from 'src/app/service/data.service';
 
@@ -8,16 +10,38 @@ import { DataService } from 'src/app/service/data.service';
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.css']
 })
-export class RoomsComponent {
+export class RoomsComponent implements OnInit, OnDestroy {
 
-  rooms!: Observable<RoomType[]>
+  availableRooms: Room[] = [];
+  roomTypes: RoomType[] = [];
+  availableRoomsSubscription!: Subscription;
+  roomTypesSubscription!: Subscription;
 
   constructor(
     private dataService: DataService
   ) {}
 
+
   ngOnInit() {
-    this.rooms = this.dataService.getRoomTypes();
+    this.getRooms();
+    this.getRoomTypes();
+  }
+
+  getRooms() {
+    this.availableRoomsSubscription = this.dataService.getAvailableRooms().subscribe((res) => {
+      this.availableRooms = res;
+    })
+  }
+
+  getRoomTypes() {
+    this.roomTypesSubscription = this.dataService.getRoomTypes().subscribe((res) => {
+      this.roomTypes = res;
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.availableRoomsSubscription.unsubscribe();
+    this.roomTypesSubscription.unsubscribe();
   }
 
 }
