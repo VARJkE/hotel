@@ -23,6 +23,7 @@ import { BookingRoomComponent } from './components/booking-room/booking-room.com
 import {DatePipe} from '@angular/common';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { LoginComponent } from './components/login/login.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { LoginComponent } from './components/login/login.component';
     MatNativeDateModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

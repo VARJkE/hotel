@@ -85,3 +85,8 @@
 .invalid {
     color: #ff0909;
   }
+
+  .snackbar-success {
+    background-color: green;
+    color: white;
+  } 

@@ -1,1 +1,16 @@
-<p>bookings-details works!</p>
+<div class="modal-header">
+    <h4 class="modal-title">Booking Details</h4>
+</div>
+<div class="modal-body">
+    <p>Booking ID: {{ bookingData?.id }}</p>
+    <p>Guest Name: {{ bookingData?.guestFullName }}</p>
+    <p>Email: {{ bookingData?.guestEmail }}</p>
+    <p>Mobile Phone: {{ bookingData?.guestPhoneNumber }}</p>
+    <p>Check IN: {{ bookingData?.checkInDate | date: 'dd-MM-YYYY'}}</p>
+    <p>Check OUT: {{ bookingData?.checkOutDate | date: 'dd-MM-YYYY'}}</p>
+    <p>Guests Number: {{ bookingData?.guestsNumber }}</p>
+    <p>Booking Date: {{ bookingData?.addDateTime | date: 'dd-MM-YYYY HH:mm'}}</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

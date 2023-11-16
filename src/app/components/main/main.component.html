@@ -33,7 +33,7 @@
                     </mat-form-field>
                   </div>
                   <div class="col-md-12">
-                    <button class="check_dates_btn" type="submit">Book Now</button>
+                    <button class="check_dates_btn" type="submit" [disabled]="datesForm.invalid">Book Now</button>
                   </div>
                 </div>
               </form>

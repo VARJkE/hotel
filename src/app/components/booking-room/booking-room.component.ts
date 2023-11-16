@@ -6,6 +6,7 @@ import { DataService } from 'src/app/service/data.service';
 import {NgxGalleryImage} from '@kolkov/ngx-gallery';
 import {NgxGalleryOptions} from '@kolkov/ngx-gallery';
 import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-booking-room',
@@ -31,6 +32,7 @@ export class BookingRoomComponent {
     private route: ActivatedRoute,
     private dataService: DataService,
     private router: Router,
+    private _snackBar: MatSnackBar
   ) {
 
   }
@@ -122,11 +124,16 @@ export class BookingRoomComponent {
     this.dataService.postBookingData(bookingData).subscribe();
     console.log(bookingData)
     this.bookingForm.reset();
-    alert("Successfully!");
+    this.openSnackBar('Success! Your booking has been submitted.', 'Close');
     this.router.navigate(['/main']);
 
   }
 
-
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 3000, // Duration the snackbar is displayed in milliseconds
+      panelClass: ['snackbar-success'] // Custom CSS class for styling
+    });
+  }
 
 }

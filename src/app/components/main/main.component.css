@@ -69,3 +69,7 @@
     color: #fff;
     transition: ease-in 0.2s;
 }
+
+.check_dates_btn:disabled {
+    background-color: #858181;
+}
