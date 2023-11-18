@@ -67,5 +67,6 @@ export class BookingsComponent {
     this.itemsPerPage = event.pageSize;
     this.updateBookings();
   }
+
 }
 

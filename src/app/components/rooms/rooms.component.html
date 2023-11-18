@@ -10,18 +10,26 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4 col-sm-6" *ngFor="let room of rooms">
-          <div class="room">
-            <div class="room_img">
-              <figure><a (click)="viewRoomDetails(room.id.toString())"><img src="assets/img/{{room.id}}/4.jpg" alt="#" /></a> </figure>
-            </div>
-            <div class="bed_room">
-              <h3>{{room.title}}</h3>
-              <p>{{room.desc}}</p>
-              <p class="price">{{room.price}} &#8382;</p>
+        <div *ngIf="isLoading; else content" class="loader">
+          <mat-spinner color="accent"></mat-spinner>
+        </div>
+        
+        <ng-template #content>
+          <div class="col-md-4 col-sm-6" *ngFor="let room of rooms">
+            <div class="room">
+              <div class="room_img">
+                <figure><a (click)="viewRoomDetails(room.id.toString())"><img src="assets/img/{{room.id}}/4.jpg" alt="#" /></a> </figure>
+              </div>
+              <div class="bed_room">
+                <h3>{{room.title}}</h3>
+                <p>{{room.desc}}</p>
+                <p class="price">{{room.price}} &#8382;</p>
+                
+              </div>
             </div>
           </div>
-        </div>
+        </ng-template>
+        
       </div>
     </div>
   </div>

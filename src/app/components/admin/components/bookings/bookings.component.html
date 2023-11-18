@@ -66,9 +66,11 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <mat-paginator [length]="allBookings.length" [pageSize]="itemsPerPage"
+                        <mat-paginator [length]="allBookings.length" [pageSize]="itemsPerPage" color="accent"
                             [pageSizeOptions]="itemsPerPageOptions" (page)="onPageChange($event)">
                         </mat-paginator>
+
+                        
                     </div>
                 </div>
                 <!-- ---------------- -->

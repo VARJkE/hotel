@@ -24,6 +24,7 @@ import {DatePipe} from '@angular/common';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { LoginComponent } from './components/login/login.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     HttpClientModule,
     AppRoutingModule,
     NgxGalleryModule,
+    MatProgressSpinnerModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
